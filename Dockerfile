@@ -24,7 +24,7 @@ RUN apk --update add build-base && \
 ADD start.sh /start.sh
 
 ENV HITCH_PEM    /etc/ssl/hitch/combined.pem
-ENV HITCH_PARAMS "-p default_ttl=3600 -p default_grace=3600 --backend=[localhost]:80 --frontend=[*]:443"
+ENV HITCH_PARAMS "--backend=[localhost]:80 --frontend=[*]:443"
 ENV HITCH_CYPHER EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 
 #CMD /start.sh
