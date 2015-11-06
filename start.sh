@@ -6,7 +6,7 @@ set -e
 if [ ! -f $HITCH_PEM ]
 then
   # check if $DOMAIN is set, otherwise set to example.com
-  if [ ! -z $DOMAIN ]
+  if [ -z $DOMAIN ]
   then
       export DOMAIN="example.com"
   fi  
@@ -21,6 +21,6 @@ fi
 
 exec bash -c \
   "exec /usr/local/sbin/hitch --user=hitch \
-  $HITCH_PEM \
   $HITCH_PARAMS \
-  --ciphers=$HITCH_CYPHER"
+  --ciphers=$HITCH_CYPHER \
+  $HITCH_PEM"
