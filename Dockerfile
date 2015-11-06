@@ -1,4 +1,5 @@
-FROM alpine
+FROM gliderlabs/alpine:3.1
+#FROM alpine
 
 ADD build.sh /tmp/build.sh
 RUN sh /tmp/build.sh
