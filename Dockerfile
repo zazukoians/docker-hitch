@@ -16,13 +16,14 @@ RUN apk --update add build-base && \
     sed -i.bak 's/rst2man --halt=2/touch/g' Makefile && \
     make && \
     make install && \
-    mkdir /etc/ssl/hitch
+    mkdir /etc/ssl/hitch && \
+    adduser -h /var/lib/hitch -s /sbin/nologin -u 999 -D hitch
 
 #ADD config/certs/gontch-all.pem /etc/ssl/hitch/combined.pem
 
-#ADD start.sh /start.sh
+ADD start.sh /start.sh
 
-ENV HITCH_PEM      /etc/ssl/hitch/combined.pem
+ENV HITCH_PEM    /etc/ssl/hitch/combined.pem
 ENV HITCH_PARAMS "-p default_ttl=3600 -p default_grace=3600 --backend=[localhost]:80 --frontend=[*]:443"
 ENV HITCH_CYPHER EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 

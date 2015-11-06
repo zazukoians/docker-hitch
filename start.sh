@@ -23,4 +23,4 @@ exec bash -c \
   "exec /usr/local/sbin/hitch --user=hitch \
   $HITCH_PEM \
   $HITCH_PARAMS \
-  --cipher=$HITCH_CYPHER"
+  --ciphers=$HITCH_CYPHER"
