@@ -1,4 +1,4 @@
-# Hitch Docker Image
+# Hitch Docker Image [![Build Status](https://travis-ci.org/zazukoians/docker-hitch.svg)](https://travis-ci.org/zazukoians/docker-hitch)
 
 This project builds and ships [Hitch](https://github.com/varnish/hitch) as a Docker image. Hitch is a scalable TLS proxy by Varnish Software. The docker image is based on [Alpine Linux Docker Image](http://gliderlabs.viewdocs.io/docker-alpine/) which provides a tiny base image. The full container is less than 8 megabytes.
 
