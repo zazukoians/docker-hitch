@@ -27,7 +27,7 @@ The pre built image can be downloaded using Docker.
 
 You can also adjust and build the image according to your needs. Just clone the repository and then execute the build command.
 
-    $ docker build -t hitch .
+    $ docker build -t zazukoians/hitch .
 
 
 ### Start the container
