@@ -11,11 +11,10 @@ apk add bash
 apk add autoconf
 apk add git
 cd /tmp
-git clone https://github.com/ktk/hitch.git
+git clone https://github.com/varnish/hitch.git
 cd hitch/
 ./bootstrap
-./configure
-sed -i.bak 's/rst2man --halt=2/touch/g' Makefile
+./configure --with-rst2man=/bin/true
 
 # install
 make
