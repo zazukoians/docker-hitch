@@ -9,10 +9,10 @@ apk add openssl
 apk add openssl-dev
 apk add bash
 apk add autoconf
-apk add git
+apk add curl
 cd /tmp
-git clone https://github.com/varnish/hitch.git
-cd hitch/
+curl -L https://api.github.com/repos/varnish/hitch/tarball/hitch-1.1.1 | tar xz
+cd varnish-hitch*
 ./bootstrap
 ./configure --with-rst2man=/bin/true
 
