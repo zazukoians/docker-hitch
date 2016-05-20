@@ -26,6 +26,6 @@ adduser -h /var/lib/hitch -s /sbin/nologin -u 999 -D hitch
 
 # cleanup
 cd /
-rm -rf /tmp/hitch
-apk del git build-base libev-dev automake autoconf openssl-dev
+rm -rf /tmp/*
+apk del git build-base libev-dev automake autoconf openssl-dev flex byacc 
 rm -rf /var/cache/apk/*
