@@ -27,5 +27,5 @@ fi
 exec bash -c \
   "exec /usr/local/sbin/hitch --user=hitch \
   $HITCH_PARAMS \
-  --ciphers=$HITCH_CYPHER \
+  --ciphers=$HITCH_CIPHER \
   $HITCH_PEM"

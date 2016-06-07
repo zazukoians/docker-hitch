@@ -12,7 +12,7 @@ You can change its behavior by changing the following environment variables:
 
     HITCH_PEM    /etc/ssl/hitch/combined.pem
     HITCH_PARAMS "--backend=[localhost]:80 --frontend=[*]:443"
-    HITCH_CYPHER EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
+    HITCH_CIPHER EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 
 Please refer to the Hitch help page and the Github repository documentation for more information. 
 

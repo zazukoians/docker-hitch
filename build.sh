@@ -22,7 +22,7 @@ cd varnish-hitch*
 make
 make install
 mkdir /etc/ssl/hitch
-adduser -h /var/lib/hitch -s /sbin/nologin -u 999 -D hitch
+adduser -h /var/lib/hitch -s /sbin/nologin -u 1000 -D hitch
 
 # cleanup
 cd /
