@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine
+FROM alpine:3.4
 MAINTAINER Adrian Gschwend <adrian.gschwend@zazuko.com>
 
 ADD build.sh /tmp/build.sh
