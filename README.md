@@ -2,9 +2,9 @@
 
 This project builds and ships [Hitch](https://github.com/varnish/hitch) as a Docker image. Hitch is a scalable TLS proxy by Varnish Software. The docker image is based on [Alpine Linux Docker Image](http://gliderlabs.viewdocs.io/docker-alpine/) which provides a tiny base image. The full container is less than 8 megabytes.
 
-If you have any problems with this image please report issues on Github. Pull requests are also welcome.
+If you have any problems with this image please report issues on Github. Pull requests & suggestions are also welcome.
 
-The image is currently built from a Git fork to make sure it compiles on Alpine Linux. This will be replaced by the latest stable tarball once our pull request got accepted.
+Hitch is built from the latest stable tarball. We provide tags for the according Hitch version and also a `latest` version pointing to the most recent tag. In case we have to re-release a version we add `_1` or alike to the version, for example `1.3.1_1`.
 
 ### Hitch environment variables
 
