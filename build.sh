@@ -13,7 +13,7 @@ apk add curl
 apk add byacc
 apk add flex
 cd /tmp
-curl -L https://api.github.com/repos/varnish/hitch/tarball/hitch-1.4.3 | tar xz
+curl -L https://api.github.com/repos/varnish/hitch/tarball/hitch-1.4.4 | tar xz
 cd varnish-hitch*
 ./bootstrap
 ./configure --with-rst2man=/bin/true
