@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.6
 MAINTAINER Adrian Gschwend <adrian.gschwend@zazuko.com>
 
 ADD build.sh /tmp/build.sh
