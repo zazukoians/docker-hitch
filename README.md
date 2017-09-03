@@ -20,14 +20,14 @@ Please refer to the Hitch help page and the Github repository documentation for 
 
 The pre built image can be downloaded using Docker.
 
-    $ docker pull zazukoians/hitch
+    docker pull zazukoians/hitch
 
 
 ### Build the Docker image by yourself
 
 You can also adjust and build the image according to your needs. Just clone the repository and then execute the build command.
 
-    $ docker build -t zazukoians/hitch .
+    docker build -t zazukoians/hitch .
 
 
 ### Start the container
@@ -36,7 +36,7 @@ The container has all pre requisites to run Hitch. In case you do not provide yo
 
 By default it will create a certificate for the domain `example.com`, you can override this by providing another name via environment variables. This is not very useful for production but you can start playing around with the image.
 
-    $ sudo docker run -i -d -p 80 -e DOMAIN=myown.example.com zazukoians/hitch
+    docker run --rm -i -d -p 80 -e DOMAIN=myown.example.com zazukoians/hitch
 
 Note that this alone won't be very useful as the default configuration points to a backend server like Varnish on localhost port 80. This will not work as there is no such server running in this image. Instead combine this image with an instance of a proxy like Varnish Cache. Link the proxy port to this image and point to the correct backend by adjusting the `--backend` option in `HITCH_PARAMS`.
 
@@ -50,4 +50,4 @@ This assumes that there is another Docker image called `my-varnish` available an
 
 The command above starts the container and runs it in foreground. You can get a console in this image by executing
 
-    $ docker run -ti -p 443 zazukoians/hitch /bin/bash
+    docker run -ti -p 443 zazukoians/hitch /bin/bash
