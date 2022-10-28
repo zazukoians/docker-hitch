@@ -1,5 +1,5 @@
 FROM alpine:3.16
-MAINTAINER Adrian Gschwend <adrian.gschwend@zazuko.com>
+LABEL org.opencontainers.image.authors="Adrian Gschwend <adrian.gschwend@zazuko.com>"
 
 # Only update below
 ARG HITCH_VERSION=1.7.3
