@@ -2,7 +2,7 @@ FROM alpine:3.12
 MAINTAINER Adrian Gschwend <adrian.gschwend@zazuko.com>
 
 # Only update below
-ARG HITCH_VERSION=1.6.0
+ARG HITCH_VERSION=1.7.3
 
 # dependencies
 RUN apk --update add bash build-base libev libev-dev automake openssl openssl-dev autoconf curl byacc flex
