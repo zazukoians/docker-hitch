@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.16
 MAINTAINER Adrian Gschwend <adrian.gschwend@zazuko.com>
 
 # Only update below
