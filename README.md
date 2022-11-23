@@ -1,4 +1,4 @@
-# Hitch Docker Image [![Build Status](https://travis-ci.org/zazukoians/docker-hitch.svg)](https://travis-ci.org/zazukoians/docker-hitch) [![](https://imagelayers.io/badge/zazukoians/hitch:latest.svg)](https://imagelayers.io/?images=zazukoians/hitch:latest 'Get your own badge on imagelayers.io')
+# Hitch Docker Image [![Build Status](https://travis-ci.org/zazukoians/docker-hitch.svg)](https://travis-ci.org/zazukoians/docker-hitch) [![](https://imagelayers.io/badge/zazukoians/hitch:latest.svg)](https://imagelayers.io/?images=zazukoians/hitch:latest "Get your own badge on imagelayers.io")
 
 This project builds and ships [Hitch](https://github.com/varnish/hitch) as a Docker image. Hitch is a scalable TLS proxy by Varnish Software. The docker image is based on [Alpine Linux Docker Image](http://gliderlabs.viewdocs.io/docker-alpine/) which provides a tiny base image. The full container is less than 8 megabytes.
 
@@ -14,7 +14,7 @@ You can change its behavior by changing the following environment variables:
     HITCH_PARAMS "--backend=[localhost]:80 --frontend=[*]:443"
     HITCH_CIPHER EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
 
-Please refer to the Hitch help page and the Github repository documentation for more information. 
+Please refer to the Hitch help page and the Github repository documentation for more information.
 
 ### Use the pre built image
 
@@ -22,13 +22,11 @@ The pre built image can be downloaded using Docker.
 
     docker pull zazukoians/hitch
 
-
 ### Build the Docker image by yourself
 
 You can also adjust and build the image according to your needs. Just clone the repository and then execute the build command.
 
     docker build -t zazukoians/hitch .
-
 
 ### Start the container
 
@@ -44,7 +42,7 @@ In our setup we override `/etc/ssl/hitch` by a local directory on the Docker hos
 
     docker run -p 443:443 --name my-hitch -e HITCH_PEM=/etc/ssl/hitch/myreal.pem  -e HITCH_PARAMS="--backend=[varnish]:80 --frontend=[*]:443" --link my-varnish:varnish -v /full/path/on/docker/host/to/conf/hitch/certs:/etc/ssl/hitch zazukoians/hitch
 
-This assumes that there is another Docker image called `my-varnish` available and it points hitch to this machine. Adjust the name according to whatever Varnish image you might use. We maintain our own version available [here](https://github.com/zazukoians/docker-varnish) 
+This assumes that there is another Docker image called `my-varnish` available and it points hitch to this machine. Adjust the name according to whatever Varnish image you might use. We maintain our own version available [here](https://github.com/zazukoians/docker-varnish)
 
 #### Start the container and keep control
 
