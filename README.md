@@ -28,7 +28,7 @@ Please refer to the Hitch help page and the Github repository documentation for 
 The pre built image can be downloaded using Docker.
 
 ```sh
-docker pull zazukoians/hitch
+docker pull ghcr.io/zazukoians/hitch
 ```
 
 ### Build the Docker image by yourself
@@ -36,7 +36,7 @@ docker pull zazukoians/hitch
 You can also adjust and build the image according to your needs. Just clone the repository and then execute the build command.
 
 ```sh
-docker build -t zazukoians/hitch .
+docker build -t ghcr.io/zazukoians/hitch .
 ```
 
 ### Start the container
@@ -46,7 +46,7 @@ The container has all pre requisites to run Hitch. In case you do not provide yo
 By default it will create a certificate for the domain `example.com`, you can override this by providing another name via environment variables. This is not very useful for production but you can start playing around with the image.
 
 ```sh
-docker run --rm -i -d -p 80 -e DOMAIN=myown.example.com zazukoians/hitch
+docker run --rm -i -d -p 80 -e DOMAIN=myown.example.com ghcr.io/zazukoians/hitch
 ```
 
 Note that this alone won't be very useful as the default configuration points to a backend server like Varnish on localhost port 80.
@@ -57,7 +57,7 @@ Link the proxy port to this image and point to the correct backend by adjusting 
 In our setup we override `/etc/ssl/hitch` by a local directory on the Docker host containing the real certificate and then we `link` the hitch image with an instance of Varnish Cache, for example:
 
 ```sh
-docker run -p 443:443 --name my-hitch -e HITCH_PEM=/etc/ssl/hitch/myreal.pem -e HITCH_PARAMS="--backend=[varnish]:80 --frontend=[*]:443" --link my-varnish:varnish -v /full/path/on/docker/host/to/conf/hitch/certs:/etc/ssl/hitch zazukoians/hitch
+docker run -p 443:443 --name my-hitch -e HITCH_PEM=/etc/ssl/hitch/myreal.pem -e HITCH_PARAMS="--backend=[varnish]:80 --frontend=[*]:443" --link my-varnish:varnish -v /full/path/on/docker/host/to/conf/hitch/certs:/etc/ssl/hitch ghcr.io/zazukoians/hitch
 ```
 
 This assumes that there is another Docker image called `my-varnish` available and it points hitch to this machine.
@@ -70,5 +70,5 @@ The command above starts the container and runs it in foreground.
 You can get a console in this image by executing:
 
 ```sh
-docker run -it -p 443 zazukoians/hitch /bin/bash
+docker run -it -p 443 ghcr.io/zazukoians/hitch /bin/bash
 ```
