@@ -1,3 +1,5 @@
+**NOTE** This repo is archived, use the [official image](https://hub.docker.com/_/hitch) instead.
+
 # Hitch Docker Image
 
 This project builds and ships [Hitch](https://github.com/varnish/hitch) as a Docker image.
